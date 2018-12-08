@@ -1,0 +1,81 @@
+<ui:composition
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:o="http://omnifaces.org/ui">
+
+
+	<o:importConstants type="santech.controller.UserController"/>
+
+	<h:body>
+
+		<ui:composition template="resources/Templates/SidebarTemplate.xhtml">
+
+			<ui:define name="Content">
+
+				<h:form>
+				<p:growl id="msgs" showDetail="true" />
+
+				<p:panel id="basic" header="Basic" footer="Movie Details" style="margin-bottom:20px">
+				<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+				<h:outputText
+				value="The story begins as Don Vito Corleone..." />
+				</h:panelGrid>
+				</p:panel>
+
+				<p:panel id="Users_list" header="Users list" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel" style="margin-bottom:20px">
+
+				<p:ajax event="close" listener="#{panelView.onClose}" update="msgs" />
+				<p:ajax event="toggle" listener="#{panelView.onToggle}" update="msgs" />
+
+				<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage name="demo/images/godfather/godfather2.jpg" />
+				<h:outputText value="#{tempBean.testMessage}" />
+
+					<p:outputLabel for="users_menu" value="Список доступных юзверей: " />
+					<p:selectOneMenu id="users_menu" value="#{userController.filterUserList}" effect="fold" editable="true">
+						<f:selectItem itemLabel="Select One" itemValue="" />
+						<f:selectItems value="#{userController.userList}" var="userVar"
+						itemValue="#{userVar}" itemLabel="#{userVar.login}"/>
+					</p:selectOneMenu>
+
+				</h:panelGrid>
+
+				<f:facet name="options">
+				<p:menu>
+				<p:submenu label="Settings">
+				<p:menuitem value="Toggle" url="#" icon="ui-icon-newwin" onclick="PF('panel').toggle()" />
+				<p:menuitem value="Remove" url="#" icon="ui-icon-close" onclick="PF('panel').close()" />
+				</p:submenu>
+				</p:menu>
+				</f:facet>
+				</p:panel>
+
+				<p:panel id="custom" header="Custom Actions" style="margin-bottom:20px">
+				<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+				<h:outputText value="After a break of more than 15 years..." />
+				</h:panelGrid>
+
+				<f:facet name="actions">
+				<h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon ui-icon-help" /></h:commandLink>
+				<h:commandLink styleClass="ui-panel-titlebar-icon ui-corner-all ui-state-default"><h:outputText styleClass="ui-icon ui-icon-star" /></h:commandLink>
+				</f:facet>
+				</p:panel>
+
+				<p:panel id="horizontal" header="Horizontal Toggle" toggleable="true" toggleOrientation="horizontal">
+				<h:panelGrid columns="2" cellpadding="10">
+				<p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+				<h:outputText
+				value="The story begins as Don Vito Corleone..." />
+				</h:panelGrid>
+				</p:panel>
+				</h:form>
+
+			</ui:define>
+		</ui:composition>
+	</h:body>
+</ui:composition>

@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	<h:head>
+		<meta http-equiv="Content-Type"
+			content="text/html; charset=UTF-8" />
+		<h:outputStylesheet library="Styles"  name="Main.css" />
+
+		<!--<h:outputScript library="olap" name="scripts/codemirror-mode.js" target="head" />-->
+		<!--<h:outputScript library="olap" name="scripts/pivot4j.js" target="head" />-->
+	</h:head>
+	<h:body>
+		<div id="HeadSide" class="HeadSide">
+			<ui:insert name="HeadSide"><p>Шапка и главное меню</p></ui:insert>
+		</div>
+
+		<p:panel id="LeftSidebar" class="LeftSidebar">
+			<ui:insert name="LeftSidebar"><p>Left sidebar</p></ui:insert>
+		</p:panel>
+		<div id="Content" class="Content">
+			<ui:insert name="Content"><p>lorem ipsum</p></ui:insert>
+		</div>
+
+	</h:body>
+</html>
