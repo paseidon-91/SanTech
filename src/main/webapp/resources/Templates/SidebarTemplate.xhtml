@@ -9,21 +9,43 @@ xmlns="http://www.w3.org/1999/xhtml"
 	<h:head>
 		<meta http-equiv="Content-Type"
 			content="text/html; charset=UTF-8" />
-		<h:outputStylesheet library="Styles"  name="Main.css" />
+		<h:outputStylesheet library="Styles"  name="MainStyle.scss" />
 
 		<!--<h:outputScript library="olap" name="scripts/codemirror-mode.js" target="head" />-->
 		<!--<h:outputScript library="olap" name="scripts/pivot4j.js" target="head" />-->
 	</h:head>
 	<h:body>
 		<div id="HeadSide" class="HeadSide">
-			<ui:insert name="HeadSide"><p>Шапка и главное меню</p></ui:insert>
+			<ui:insert name="HeadSide">
+				<p>Шапка и главное меню</p>
+			</ui:insert>
 		</div>
 
-		<p:panel id="LeftSidebar" class="LeftSidebar">
-			<ui:insert name="LeftSidebar"><p>Left sidebar</p></ui:insert>
-		</p:panel>
-		<div id="Content" class="Content">
-			<ui:insert name="Content"><p>lorem ipsum</p></ui:insert>
+		<div class="MiddlePart">
+			<div id="LeftSidebar" class="LeftSidebar">
+				<ui:insert name="LeftSidebar"><p>Left sidebar</p></ui:insert>
+			</div>
+			<div id="Content" class="Content">
+				<ui:insert name="Content">
+					<p>
+						lorem ipsum
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						lorem ipsum
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						lorem ipsum
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						lorem ipsum
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						lorem ipsum
+						<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+						lorem ipsum
+					</p>
+				</ui:insert>
+			</div>
+		</div>
+
+		<div class="BottomSide border-template-content" >
+			<ui:insert name="BottomSide"><p>Bottom side bar</p></ui:insert>
 		</div>
 
 	</h:body>

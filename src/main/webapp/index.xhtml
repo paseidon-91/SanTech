@@ -28,8 +28,8 @@
 
 				<p:panel id="Users_list" header="Users list" toggleable="true" closable="true" toggleSpeed="500" closeSpeed="500" widgetVar="panel" style="margin-bottom:20px">
 
-				<p:ajax event="close" listener="#{panelView.onClose}" update="msgs" />
-				<p:ajax event="toggle" listener="#{panelView.onToggle}" update="msgs" />
+				<p:ajax event="close" listener="#{userController.onClose}" update="msgs" />
+				<p:ajax event="toggle" listener="#{userController.onToggle}" update="msgs" />
 
 				<h:panelGrid columns="2" cellpadding="10">
 				<p:graphicImage name="demo/images/godfather/godfather2.jpg" />
